@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h2 #{gerecht.name}
+  p #{gerecht.beschrijving}
+  p Prijs: € #{gerecht.prijs}
+  
+  hr
+  p
+    a(href=gerecht.url+'/winkelmand',class="btn btn-outline-primary") Voeg toe aan winkelmandje
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    
+

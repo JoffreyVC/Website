@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+  h1 #{categorie.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Gerechten
+
+    dl
+      each gerecht in categorie_gerecht
+        li
+          a(href=gerecht.url) #{gerecht.name} | € #{gerecht.prijs}
+        
+
+      else
+        p This genre has no gerechten

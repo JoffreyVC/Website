@@ -1,4 +1,5 @@
 //importeert node libraries
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -27,6 +28,13 @@ mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
+const multer = require('multer');
+const upload = multer({dest: 'uploads/'});
+
+
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+
 
 
 
@@ -45,6 +53,7 @@ app.use(helmet());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/catalog", catalogRouter);
+
 
 app.use(compression()); // Compress all routes
 

@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+
 const GerechtSchema = new Schema({
   name: { type: String, required: true , maxLength: 100 ,minLength: 3 },
   categorie: { type: Schema.Types.ObjectId, ref: "Categorie", required: true },
   prijs: {type: Number, required: true, },
-  beschrijving: {type: String }
+  beschrijving: {type: String },
+  afbeelding: {type: String}
 
 
 });

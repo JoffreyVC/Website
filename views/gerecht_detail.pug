@@ -1,10 +1,14 @@
+
 extends layout
+
 
 block content
 
   h2 #{gerecht.name}
   p #{gerecht.beschrijving}
   p Prijs: € #{gerecht.prijs}
+  picture
+    img(src='/images/'+gerecht.afbeelding alt="Afbeelding kon niet laden")
   
   hr
   p
